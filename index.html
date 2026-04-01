@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./Assets/favicon.ico">
+</head>
+<body>
+    <h1>The PokeDex</h1>
+    <p>Use the search function to find your favorite Pokemon. Use either dex number or name.</p>
+    <button onclick="randomMon()">Random Mon</button>
+    <label for="mon">Pokemon:</label>
+    <input type="text" id="mon" name="mon">
+    <button onclick="searchMon()">Search</button>
+    <div id="displayMon">
+        <p id="displayId">
+            <span id="displayName"></span>
+            <span id="displayNum"></span>
+        </p>
+        <p id="displaySprite">
+            <img id="displayFront" src="" alt="Front Sprite">
+            <img id="displayBack" src="" alt="Back Sprite">
+        </p>
+        <p id="displayInfo">
+            <span id="displayType"></span>
+                <span id="displayGen"></span>
+                <span id="displayHeight"></span>
+                <span id="displayWeight"></span>
+                <span id="displayAbility"></span>
+                <span id="displayAbility2"></span>
+                <span id="displayHidden"></span>
+        </p>
+    </div>
+<h2>Pokemon Type Defense</h2>
+<div class="typingContainer">
+    <div class="selection-row">
+        <div class="select-group">
+            <h3>Primary</h3>
+            <select id="monType"></select>
+        </div>
+        <div class="select-group">
+            <h3>Secondary</h3>
+            <select id="monSecType"></select>
+        </div>
+    </div>
+    <button id="typeChart" onclick="displayTyping()">Calculate Defense</button>
+    <div id="displayTyping"></div>
+</div>
+<div id="monGuesserContainer">
+    <h2>Who's That Pokemon?</h2>
+    <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+    <button id="monGuesser" onclick="monGuesser()">Start Game</button>
+    <div id="missCounter">
+        <p>Misses: <span id="missCount"></span></p>
+    </div>
+    <div id="monGuesserDisplay">
+        <img id="monGuesserSprite" src="" alt="Who's That Pokemon?">
+        <p id="monGuesserName"></p>
+    </div>
+    <div id="monHints">
+        <p id="hint1"></p>
+        <p id="hint2"></p>
+        <p id="hint3"></p>
+    </div>
+    <div id="guessInput">
+        <input type="text" id="guess" name="guess" placeholder="Enter your guess...">
+        <button onclick="submitGuess()">Submit Guess</button>
+    </div>
+</div>
+    <script src="script.js"></script>
+    <footer>
+        <p>Powered by PokeAPI https://pokeapi.co/</p>
+    </footer>
+</body>
+</html>
